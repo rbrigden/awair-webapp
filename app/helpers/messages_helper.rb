@@ -12,7 +12,7 @@ module MessagesHelper
 	end
 
 	def message_update
-		20.times do |t|
+		40.times do |t|
 			result = get_new_message
 			result.each do |block|
 				message = block["message"]
@@ -23,7 +23,7 @@ module MessagesHelper
 								confidence: message["confidence_%"]})
 			end
 
-			sleep(30)
+			sleep(15)
 		end
 
 	end
