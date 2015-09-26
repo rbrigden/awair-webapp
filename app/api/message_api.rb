@@ -11,9 +11,12 @@ class MesssageAPI
 	end
 
 	def self.update
+		20.times do |t|
+			Message.create(body:text, transcribed_at: Time.zone.now, message_type: 'fire', locale: Locale.where({city:'San Francisco'}).first)
+			sleep(30)
+		end
 		# if get_new_message.class == Hash
 		# 	Message.create(body:message["body"], )
-
 	end
 
 end
