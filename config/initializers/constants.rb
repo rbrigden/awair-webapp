@@ -1,3 +1,7 @@
 MESSAGE_TYPES = {
-	"fire" => "fa-fire"
+	"fire" => "fire",
+	"gun" => "crosshairs",
+	"shot" => "crosshairs",
+	"dead" => "bolt",
+	"not breathing" => "heartbeat"
 }
