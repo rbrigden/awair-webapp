@@ -11,8 +11,8 @@ class MesssageAPI
 	end
 
 	def self.update
-		if get_new_message.class == Hash
-			Message.create(body:message["body"], )
+		# if get_new_message.class == Hash
+		# 	Message.create(body:message["body"], )
 
 	end
 
