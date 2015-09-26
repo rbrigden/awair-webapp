@@ -19,10 +19,10 @@
 
 # Learn more: http://github.com/javan/whenever
 
-set :output, "/log/api.log"
+# set :output, "/log/api.log"
 
-every 1.minute do
-	runner "MessageAPI.update"
-end
+# every 1.minute do
+# 	runner "MessageAPI.update"
+# end
 
-end
+# end
