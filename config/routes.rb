@@ -1,13 +1,19 @@
 Rails.application.routes.draw do
-  get 'messages/index'
+  root 'locales#welcome'
+  resources :messages
+  resources :locales
 
-  get 'messages/new'
+  resources :locales do 
+    collection do
+      get 'welcome'
+      post 'find_locale'
+    end
+  end
 
-  get 'messages/show'
 
-  get 'messages/edit'
 
-  get 'messages/destroy'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,0 +1,142 @@
+@import "superhero";
+
+// Font Awesome
+@import "font-awesome";
+
+
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+h3.resize {
+  font-size: 2.7vmin;
+}
+
+h4.resize {
+  font-size: 2.3vmin;
+}
+
+h5.resize {
+  font-size: 2.0vmin;
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+.container .credit {
+  margin: 10px 0;
+}
+
+
+.center-title {
+  text-align: center;
+  margin-top: 10%;
+  position: relative;
+  color: white;
+  top:15%;
+  bottom:10%;
+}
+  
+.btn-xl {  
+    padding: 20px 30px;
+    font-size: 50px;
+    line-height: 2;
+    border-radius: 0px;
+}
+
+.thumbnail-locale{
+  position: relative;
+  overflow: hidden;
+  text-decoration:none;
+  min-height:200px;
+  color: #333333;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.thumbnail-message{
+  position: relative;
+  overflow: hidden;
+  text-decoration:none;
+  min-height:150px;
+  min-width:400px;
+  color: #ffffff;
+  opacity: 1;
+  border:10px;
+  border-color: #ffffff;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.thumbnail-locale:hover{
+  z-index: 2;
+  min-height: 200px;
+  height:auto;
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.thumbnail-message:hover{
+  border : 2px solid red;
+}
+
+.caption-static{
+    position:relative;
+    top:0;
+    right:0;
+    width:100%;
+    height:100%;
+    padding:2%;
+    text-align:center;
+}
+
+.caption-hover {
+    position:relative;
+    top:0;
+    right:0;
+    width:100%;
+    height:100%;
+    padding:2%;
+    display: none;
+    text-align:center;
+}
+
+.logo-center{
+  border:inherit 8px #000000;
+  -moz-border-radius-topleft: 75px;
+  -moz-border-radius-topright:75px;
+  -moz-border-radius-bottomleft:75px;
+  -moz-border-radius-bottomright:75px;
+  -webkit-border-top-left-radius:75px;
+  -webkit-border-top-right-radius:75px;
+  -webkit-border-bottom-left-radius:75px;
+  -webkit-border-bottom-right-radius:75px;
+  border-top-left-radius:75px;
+  border-top-right-radius:75px;
+  border-bottom-left-radius:75px;
+  border-bottom-right-radius:75px;
+}

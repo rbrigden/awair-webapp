@@ -1,6 +1,28 @@
 source 'https://rubygems.org'
 
 
+gem 'activeform-rails'
+# Use Font Awesome
+gem 'font-awesome-rails', '~> 4.2.0.0'
+# Use Simple Form
+gem 'simple_form', '~> 3.1.0'
+# Use Cocoon
+gem 'cocoon', '~> 1.2.6'
+# Use Bootstrap
+gem 'bootstrap-sass', '~> 3.3.4'
+# Use AutoPrefixer
+gem 'autoprefixer-rails'
+# Use Faker
+gem 'faker'
+# Use JQuery Datables Rails
+gem 'jquery-datatables-rails', '~> 3.1.1'
+# JQuery UI Rails
+gem 'jquery-ui-rails'
+
+gem 'zip-codes'
+gem 'whenever', :require => false
+gem 'httparty'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record

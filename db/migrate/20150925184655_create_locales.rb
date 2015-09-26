@@ -3,6 +3,7 @@ class CreateLocales < ActiveRecord::Migration
     create_table :locales do |t|
       t.string :city
       t.string :state
+  
 
       t.timestamps null: false
     end

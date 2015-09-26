@@ -5,7 +5,6 @@ class CreateMessages < ActiveRecord::Migration
       t.text :body
       t.datetime :transcribed_at
       t.string :type
-
       t.timestamps null: false
     end
   end
