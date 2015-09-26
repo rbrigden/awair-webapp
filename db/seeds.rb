@@ -18,8 +18,8 @@ locales = Locale.create([{city: 'Pittsburgh', state: 'PA', img_url: 'http://www.
 
 text = 'this is a message about life. life subsists on coffee. coffee is life. coffee is 42'
 
-test_messages = Message.create([{body:text, transcribed_at: Time.zone.now, message_type: 'fire', locale: Locale.where({city:'Pittsburgh'}).first},
-								{body:text, transcribed_at: Time.zone.now, message_type: 'gunshot', locale: Locale.where({city:'Pittsburgh'}).first},
-								{body:text, transcribed_at: Time.zone.now, message_type: 'ems', locale: Locale.where({city:'Pittsburgh'}).first},
-								{body:text, transcribed_at: Time.zone.now, message_type: 'police', locale: Locale.where({city:'Pittsburgh'}).first}
+# test_messages = Message.create([{body:text, transcribed_at: Time.zone.now, message_type: 'fire', locale: Locale.where({city:'Pittsburgh'}).first},
+# 								{body:text, transcribed_at: Time.zone.now, message_type: 'gunshot', locale: Locale.where({city:'Pittsburgh'}).first},
+# 								{body:text, transcribed_at: Time.zone.now, message_type: 'ems', locale: Locale.where({city:'Pittsburgh'}).first},
+# 								{body:text, transcribed_at: Time.zone.now, message_type: 'police', locale: Locale.where({city:'Pittsburgh'}).first}
 									])
