@@ -12,7 +12,7 @@ class MesssageAPI
 
 	def self.update
 		20.times do |t|
-			Message.create(body:text, transcribed_at: Time.zone.now, message_type: 'fire', locale: Locale.where({city:'San Francisco'}).first)
+			Message.create(body:"uhdueufuheufhue", transcribed_at: Time.zone.now, message_type: 'fire', locale: Locale.where({city:'San Francisco'}).first)
 			sleep(30)
 		end
 		# if get_new_message.class == Hash

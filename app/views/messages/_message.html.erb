@@ -4,7 +4,7 @@
 		<a href="<%= message_path(message) %>" style="text-decoration:none; color: #333333; ">
 			<div class="col-md-2 text-center">
 				<br>
-				<%= fa_icon(message.message_type + ' 3x' ,style:'color:red')  %>
+				<%=  fa_icon( !message.message_type.nil? ? message.message_type + ' 3x' : 'exclamation 3x' ,style:'color:red')  %>
 			</div>
 
 			<div class="col-md-6">
@@ -17,7 +17,7 @@
 
 				<div class="row text-center">
 					<h4> Confidence </h4>
-					<i><h3 style="color:red"> 100% </h3></i>
+					<i><h3 style="color:red"> <%= message.confidence %> </h3></i>
 				</div>
 				
 			</div>
