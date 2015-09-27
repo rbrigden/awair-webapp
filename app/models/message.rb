@@ -1,8 +1,7 @@
 class Message < ActiveRecord::Base
 
-	belongs_to :locale, dependent: :destroy
+	belongs_to :locale
 
-	validate
 
 
 	

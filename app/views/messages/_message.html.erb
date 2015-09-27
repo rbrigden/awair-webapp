@@ -18,9 +18,7 @@
 				<div class="row text-center">
 					<h4> Confidence </h4>
 					<i><h3 style="color:red"> <%= message.confidence %> </h3></i>
-					
-					<% date =  message.created_at %>
-					<%= date.strftime("%I:%M %p").to_s %>
+					<%= message.transcribed_at.in_time_zone("Eastern Time (US & Canada)").strftime("%I:%M %p").to_s %>
 				</div>
 				
 			</div>
