@@ -4,7 +4,7 @@
 
 <div class="row">
 	<div class="col-md-6 col-md-offset-3"> 
-		<% @locale.messages.order('created_at DESC').each do |message| %>
+		<% @locale.messages.order('created_at DESC').take(150).each do |message| %>
 		<div class="row">
 			<%= render message %>
 		</div>
@@ -13,4 +13,4 @@
 
 </div>
 
-<div data="<%= @locale.messages.order('created_at DESC').first.created_at %>">
+<div data="<%= @locale.messages.order('created_at DESC').first.created_at unless @locale.messages.first.nil?%>"></div>
