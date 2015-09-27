@@ -2,6 +2,16 @@
 	<h2><%= @locale.city %>, <%= @locale.state %></h2>
 </div>
 
+
+<% if @locale.messages.first.nil? %>
+
+<div class="col-md-8 col-md-offset-2 text-center">
+	<h2 style="color:white"><i>Coming Soon</i></h2>
+	<h2 style="color:white"> Check back in when <%= @locale.city %> becomes Aw<span style="color:red">air<span> </h2>
+</div>
+
+<% end %>
+
 <div class="row">
 	<div class="col-md-6 col-md-offset-3"> 
 		<% @locale.messages.order('created_at DESC').take(150).each do |message| %>
