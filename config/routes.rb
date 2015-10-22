@@ -1,14 +1,21 @@
 Rails.application.routes.draw do
   root 'locales#welcome'
   resources :messages
-  resources :locales
+  resources :locales do
+    member do
+      get 'latest_messages'
+    end
+  end
 
   resources :locales do 
     collection do
+
       get 'welcome'
       post 'find_locale'
     end
   end
+
+  
 
 
 

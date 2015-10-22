@@ -13,9 +13,9 @@
 <% end %>
 
 <div class="row">
-	<div class="col-md-6 col-md-offset-3"> 
+	<div id="slot" class="col-md-6 col-md-offset-3"> 
 		<% @locale.messages.order('transcribed_at DESC').take(150).each do |message| %>
-		<div class="row">
+		<div id="wrapper" class="row">
 			<%= render message %>
 		</div>
 		<% end %>
@@ -24,3 +24,74 @@
 </div>
 
 <div data="<%= @locale.messages.order('transcribed_at DESC').first.created_at unless @locale.messages.first.nil?%>"></div>
+
+
+<script>
+	$(document).ready(function(){
+
+		var i = 0;
+		var datetimes = [];
+		var latest_date = new Date(Date.now());
+		function myLoop () {  
+
+			for (i=0; i < datetimes.length; i++){
+				if (datetimes[i] > latest_date){
+					latest_date = datetimes[i]
+				}
+			}
+
+			setTimeout(function () {
+				$.getJSON( "/locales/<%= @locale.id %>/latest_messages.json", function( json ) {
+					
+					var message = json[0];
+					datetimes.push(new Date(message.transcribed_at));
+
+					var block = $('#wrapper').first().clone(); 
+					if ( new Date(message.transcribed_at) > new Date($("#wrapper").children().first().find("#transcribed").attr("data") ) && (latest_date < new Date(message.transcribed_at)) ) {
+						
+						// if message body provided, add it to div
+						if (message.body){
+							block.find("#body_text").html(message.body);
+						} else {
+							block.find("#body_text").html("--");
+						}					
+						
+						// if transcribed datetime provided, add it to div
+						if (message.transcribed_at){
+							var display_time = moment(message.transcribed_at);
+							block.find("#transcribed").html(display_time.tz('America/<%=@locale.city%>').format('LT'));
+						} else {
+							block.find("#transcribed").html("--");
+						}
+
+						// if confidence provided, add to div
+						if (message.confidence){
+							block.find("#confidence").html(message.confidence);
+						} else {
+							block.find("#confidence").html("--");
+						}
+						
+
+					
+						block.hide();
+						$("#slot").prepend(block);
+						block.slideDown("slow");
+					    
+					}
+
+
+					
+				});
+
+			i++;
+			if (i > 0) { 
+				myLoop();
+			};
+
+			}, 4 * 1000);
+		};
+
+		myLoop();
+
+	});
+</script>

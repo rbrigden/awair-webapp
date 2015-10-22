@@ -25,12 +25,7 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
   end
 
-  def ajax
-    @messages = Message
-    respond_to do |format|
-      format.json { render json: @messages }
-    end
-  end
+
 
   def destroy
   end

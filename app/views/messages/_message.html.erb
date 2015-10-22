@@ -1,4 +1,4 @@
-<div class="row">
+<div id="block" class="row">
 	<div  class="thumbnail thumbnail-message" style="opacity:100%;color:white;transparency:0">
 		<br>
 		<a href="<%= message_path(message) %>" style="text-decoration:none; color: #333333; ">
@@ -9,7 +9,7 @@
 
 			<div class="col-md-6">
 					<div class="caption-static">
-						<h4 style="color:white" class="resize"><%= message.body.capitalize %></h4>
+						<h4 id="body_text" style="color:white" class="resize"><%= message.body.capitalize %></h4>
 					</div> 
 			</div>
 
@@ -17,8 +17,9 @@
 
 				<div class="row text-center">
 					<h4> Confidence </h4>
-					<i><h3 style="color:red"> <%= message.confidence %> </h3></i>
-					<%= message.transcribed_at.in_time_zone("Eastern Time (US & Canada)").strftime("%I:%M %p").to_s %>
+					<i><h3 id="confidence" style="color:red"> <%= message.confidence %> </h3></i>
+					<span id="transcribed" data="<%= message.transcribed_at.iso8601 %>" > <%= message.transcribed_at.in_time_zone("Eastern Time (US & Canada)").strftime("%I:%M %p").to_s %> </span>
+
 				</div>
 				
 			</div>

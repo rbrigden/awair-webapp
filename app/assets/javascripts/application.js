@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require moment
 //= require jquery_ujs
+//= require moment-timezone-with-data-2010-2020
 //= require turbolinks
 //= require_tree .

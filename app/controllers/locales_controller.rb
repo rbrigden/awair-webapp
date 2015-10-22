@@ -84,10 +84,19 @@ class LocalesController < ApplicationController
 		@locale = Locale.find(params[:id])
 	end
 
+	def latest_messages
+	    @messages = Locale.find(params[:id]).messages.order('transcribed_at DESC')
+	    respond_to do |format|
+	      format.json { render json: @messages }
+	    end
+  	end
+
 	def index
 		@locales = Locale.all
 	end
 
+
+	
 
 	def create
 		@locale = Locale.new(locale_params)
